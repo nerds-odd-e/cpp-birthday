@@ -1,5 +1,5 @@
 #include "gtest/gtest.h"
-#include "birthday.h"
+#include "../main/birthday.h"
 #include "stub_today_provider.h"
 
 namespace {

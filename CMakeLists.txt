@@ -24,8 +24,5 @@ endif()
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_library(core birthday.cpp birthday.h today_provider.cpp today_provider.h)
-add_executable(cpp_birthday main.cpp)
-target_link_libraries(cpp_birthday core)
-add_executable(cpp_birthday_test birthday_unittest.cc stub_today_provider.h)
-target_link_libraries(cpp_birthday_test gtest gtest_main core)
+add_subdirectory(main)
+add_subdirectory(test)
