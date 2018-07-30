@@ -1,10 +1,9 @@
 #include <ctime>
-#include <iostream>
 #include "birthday.h"
+#include "today_provider.h"
 
 bool IsBirthday() {
-    time_t now = time(0);
-    auto today = localtime(&now);
+    auto today = getToday();
     return today->tm_mon + 1 == 4 && today->tm_mday == 9;
 }
 
