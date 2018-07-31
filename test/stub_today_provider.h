@@ -3,12 +3,14 @@
 #ifndef CPP_BIRTHDAY_TODAY_PROVIDER_H
 #define CPP_BIRTHDAY_TODAY_PROVIDER_H
 
+static tm* today;
+
+void setToday(tm* AToday) {
+    today = AToday;
+}
+
 tm* getToday() {
-    time_t now = time(0);
-    tm *ltm = localtime(&now);
-    ltm->tm_mon = 3;
-    ltm->tm_mday = 9;
-    return ltm;
+    return today;
 }
 
 #endif //CPP_BIRTHDAY_TODAY_PROVIDER_H
