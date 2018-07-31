@@ -5,8 +5,12 @@
 
 static tm* today;
 
-void setToday(tm* AToday) {
-    today = AToday;
+void setToday(int month, int day) {
+    time_t now = time(0);
+    tm *ltm = localtime(&now);
+    ltm->tm_mon = month - 1;
+    ltm->tm_mday = day;
+    today = ltm;
 }
 
 tm* getToday() {
