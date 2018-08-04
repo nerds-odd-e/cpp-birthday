@@ -7,14 +7,13 @@ static tm* today;
 
 void setToday(int month, int day) {
     time_t now = time(0);
-    tm *ltm = localtime(&now);
-    ltm->tm_mon = month - 1;
-    ltm->tm_mday = day;
-    today = ltm;
+    today = localtime(&now);
+    today->tm_mon = month - 1;
+    today->tm_mday = day;
 }
 
-tm* getToday() {
-    return today;
+tm& getToday() {
+    return *today;
 }
 
 #endif //CPP_BIRTHDAY_TODAY_PROVIDER_H
